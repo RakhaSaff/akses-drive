@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>File Dilindungi</title>
+</head>
+<body>
+<p>File ini dilindungi password.</p>
+<form onsubmit="cek(event)">
+  <input type="password" id="pw" placeholder="Masukkan password" />
+  <button type="submit">Masuk</button>
+</form>
+<p id="pesan" style="color:red;display:none">Password salah.</p>
+
+<script>
+  const PASSWORD = "isipasswordDisini";
+  const LINK = "https://drive.google.com/drive/folders/1F3AuH-dKHa2k-b3VQjnLAqet0Lk0GWMh?usp=sharing";
+
+  function cek(e) {
+    e.preventDefault();
+    if (document.getElementById("pw").value === PASSWORD) {
+      window.location.href = LINK;
+    } else {
+      document.getElementById("pesan").style.display = "block";
+    }
+  }
+</script>
+</body>
+</html>
